@@ -3,10 +3,14 @@ from typing import List
 
 
 def bubble_sort(input_list: List) -> List:
+    flag = True
     for i in range(len(input_list)):
         for j in range(len(input_list) - 1 - i):
-            if input_list[j] > input_list[j+1]:
-                input_list[j], input_list[j+1] = input_list[j+1], input_list[j]
+            if input_list[j] > input_list[j + 1]:
+                input_list[j], input_list[j + 1] = input_list[j + 1], input_list[j]
+                flag = False
+        if flag:
+            break
     return input_list
 
 
